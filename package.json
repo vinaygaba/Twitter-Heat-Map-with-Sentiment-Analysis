@@ -1,0 +1,15 @@
+{
+  "name": "twitter-heat-map",
+  "version": "0.0.1",
+  "author": "diksha",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "*",
+    "twitter": "*",
+    "socket.io": "*",
+    "mongodb": "*"
+  }
+}

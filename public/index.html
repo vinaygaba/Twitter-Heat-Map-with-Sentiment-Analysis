@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+	<!-- Safe Software, 2013 -->
+	<!-- http://www.safe.com -->
+
+	<title>Twitter Streaming Using Node</title>
+	<script src="../socket.io/socket.io.js"></script>
+
+	<!--<script src="/node_modules/socket.io/node_modules/socket.io-client/socket.io.js"></script>
+	<!-- JQuery -->
+	<script src="/libs/jquery-1.10.1.js"></script>
+
+	<!-- Bootstrap -->
+	<!--http://getbootstrap.com/2.3.2/-->
+	<script src="/libs/bootstrap/js/bootstrap.js"></script>
+	<link href="/libs/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/libs/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+  	<script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+	<!-- Google Maps -->
+	<link href="https://google-developers.appspot.com/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization"></script>
+
+	<!-- Generic -->
+	<link rel="stylesheet" href="css/index.css">
+	<!-- Generic server specific functions -->
+	<script src="/js/FMEServer.js" type="text/javascript"></script>
+
+	<!-- Spatial Dashboard JavaScript -->
+	<script src="/js/twitterStream.js" type="text/javascript"></script>
+
+</head>
+
+<body onload="initialize()">
+
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">        
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<div class="nav-collapse collapse">
+					<div class="subject">Twitter Heat Map</div>
+					<div class="contributor">Vinay Gaba - vhg2105</div>
+					<div class="contributor">Diksha Vanvari - dhv2108 &nbsp;</div>
+<select id="keywordDD" onChange="chooseKeyword(this.value)">
+	<option value = "all" disabled>Select a keyword</option>
+<option value="all">All</option>
+  <option value="love">Love</option>
+  <option value="jokes">Jokes</option>
+  <option value="news">News</option>
+  <option value="travel">Travel</option>
+  <option value="politics">Politics</option>
+  <option value="cricket">Cricket</option>
+  <option value="football">Football</option>
+  <option value="technology">Technology</option>
+</select>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div id="map_canvas"></div>
+
+	</div>
+
+	<div id="sidebar">
+            <h4 id="heading">Statistics</h4>
+            <div id="counter"> </div>
+            <div id="positive-counter"> </div>
+            <div id="negative-counter"> </div>
+            <div id="neutral-counter"> </div>
+
+            <h4 id="heading">Trends from around the World</h4>
+            <h5 id="heading">Select a place from the list</h5>
+            <select id='dropdown' name='keywords'>
+				<option value='2459115'>New York</option>
+				<option value='615702'>Paris</option>
+				<option value='2295411'>Mumbai</option>
+				<option value='2490383'>Seattle</option>
+				<option value='23424977'>United States</option>
+				<option value='23424848'>India</option>
+				<option value='23424975'>United Kingdom</option>
+				<option value='23424936'>Russia</option>
+				<option value='23424781'>China</option>
+                <option value='23424748'>Australia</option>
+                <option value='23424942'>South Africa</option>
+                <option value='23424853'>Italy</option>
+                <option value='23424768'>Brazil</option>
+                <option value='23424901'>Malaysia</option>
+			</select>
+
+            <div id="trending-topics"> </div>
+
+	</div>
+
+
+</body>
+</html>
